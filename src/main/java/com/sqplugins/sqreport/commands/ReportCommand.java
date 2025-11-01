@@ -44,20 +44,16 @@ public class ReportCommand implements CommandExecutor, TabCompleter {
             return true;
         }
 
-        // Join the reason
         String reason = String.join(" ", args).replace(args[0], "").trim();
 
-        // Save report
         ReportStorage storage = plugin.getReportStorage();
         storage.addReport(player.getName(), target.getName(), reason);
 
-        // Notify reporter
         player.sendMessage(ChatColor.translateAlternateColorCodes('&',
                 plugin.getConfig().getString("messages.report-sent")
                         .replace("%target%", target.getName())
                         .replace("%reason%", reason)));
 
-        // Notify admins
         String notify = ChatColor.translateAlternateColorCodes('&',
                 plugin.getConfig().getString("messages.report-notify")
                         .replace("%reporter%", player.getName())
@@ -83,4 +79,5 @@ public class ReportCommand implements CommandExecutor, TabCompleter {
         }
         return suggestions;
     }
+
 }
