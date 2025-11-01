@@ -38,14 +38,12 @@ public class ReportsCommand implements CommandExecutor, TabCompleter {
         ReportStorage storage = plugin.getReportStorage();
 
         if (args.length == 1 && args[0].equalsIgnoreCase("clear")) {
-            // /reports clear <nick/all>
             storage.clearReports();
             player.sendMessage(ChatColor.translateAlternateColorCodes('&',
                     plugin.getConfig().getString("messages.cleared-all")));
             return true;
         }
 
-        // Open GUI
         new ReportsGUI(plugin, player).open();
         return true;
     }
@@ -58,4 +56,5 @@ public class ReportsCommand implements CommandExecutor, TabCompleter {
         }
         return completions;
     }
+
 }
