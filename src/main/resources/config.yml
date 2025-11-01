@@ -1,0 +1,14 @@
+messages:
+  report-sent: "&aYou successfully reported &c%target% &afor &e%reason%!"
+  report-notify: "&c[REPORT] &e%reporter% &7has reported &e%target% &7for &f%reason%"
+  report-self: "&cYou cannot report yourself!"
+  report-usage: "&cUsage: /report <player> <reason>"
+  player-not-found: "&cThat player is not online."
+  no-reports: "&7There are currently no reports."
+  reload: "&aSqReport configuration reloaded!"
+  cleared: "&aReports cleared for &e%reporter%!"
+  cleared-all: "&aAll reports cleared!"
+  no-permission: "&cYou don't have permission for this command!"
+
+gui:
+  title: "Active Reports"

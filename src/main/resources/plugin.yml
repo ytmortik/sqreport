@@ -1,0 +1,19 @@
+name: SqReport
+version: 1.0.0
+main: com.sqplugins.sqreport.SqReport
+api-version: 1.21
+author: YTmortik
+commands:
+  report:
+    description: Report a player
+    usage: /report <player> <reason>
+  reports:
+    description: View all reports
+    usage: /reports
+  sqreport:
+    description: Reload or manage SqReport
+    usage: /sqreport <reload>
+permissions:
+  sqreport.view:
+    description: Allows access to /reports and /sqreport commands
+    default: op
