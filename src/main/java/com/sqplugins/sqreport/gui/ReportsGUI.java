@@ -48,7 +48,6 @@ public class ReportsGUI implements Listener {
             gui.setItem(i, skull);
         }
 
-        // Register listener
         Bukkit.getPluginManager().registerEvents(new Listener() {
             @EventHandler
             public void onClick(InventoryClickEvent e) {
@@ -73,4 +72,5 @@ public class ReportsGUI implements Listener {
 
         viewer.openInventory(gui);
     }
+
 }
