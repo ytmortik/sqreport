@@ -26,9 +26,6 @@ public class ReportStorage {
         this.config = YamlConfiguration.loadConfiguration(reportFile);
     }
 
-    // -------------------------
-    //   Report Objekt
-    // -------------------------
     public static class Report {
         private final String reporter;
         private final String target;
@@ -45,9 +42,6 @@ public class ReportStorage {
         public String getReason() { return reason; }
     }
 
-    // -------------------------
-    //   Přidání reportu
-    // -------------------------
     public void addReport(String reporter, String target, String reason) {
         String key = "reports." + System.currentTimeMillis();
         config.set(key + ".reporter", reporter);
@@ -56,9 +50,6 @@ public class ReportStorage {
         saveReports();
     }
 
-    // -------------------------
-    //   Načtení všech reportů
-    // -------------------------
     public List<Report> getReports() {
         List<Report> list = new ArrayList<>();
         if (config.contains("reports")) {
@@ -74,17 +65,11 @@ public class ReportStorage {
         return list;
     }
 
-    // -------------------------
-    //   Smazání všech reportů
-    // -------------------------
     public void clearReports() {
         config.set("reports", null);
         saveReports();
     }
 
-    // -------------------------
-    //   Uložení do souboru
-    // -------------------------
     public void saveReports() {
         try {
             config.save(reportFile);
@@ -93,12 +78,8 @@ public class ReportStorage {
         }
     }
 
-    // -------------------------
-    //   Načtení reportů při startu
-    // -------------------------
     public void loadReports() {
-        // config je načten při inicializaci
-        // pokud chceš, můžeš přidat log
         plugin.getLogger().info("Loaded " + getReports().size() + " reports.");
     }
+
 }
